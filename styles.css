@@ -17,10 +17,13 @@ body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at 8% 10%, #f4f9ff 0%, rgba(244, 249, 255, 0) 30%),
-    radial-gradient(circle at 88% 6%, #d8e6fb 0%, rgba(216, 230, 251, 0) 35%),
-    linear-gradient(180deg, #d7e7fb 0%, var(--bg) 45%, #dce9f8 100%);
+  background-color: #dce9f8;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg transform='rotate(30 60 60)'%3E%3Cpath d='M42 45 L32 52 L36 54 L36 80 L64 80 L64 54 L68 52 L58 45 C56 50 44 50 42 45 Z' fill='%232b66b8' opacity='0.10'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg transform='rotate(-30 60 60)'%3E%3Cpath d='M42 45 L32 52 L36 54 L36 80 L64 80 L64 54 L68 52 L58 45 C56 50 44 50 42 45 Z' fill='%232b66b8' opacity='0.10'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 120px 120px;
+  background-repeat: repeat;
+  background-position: 0 0, 60px 60px;
   line-height: 1.65;
 }
 
