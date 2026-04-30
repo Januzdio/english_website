@@ -167,6 +167,13 @@ h2 {
   padding: 0.6rem 1rem;
   border-radius: 10px;
   font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px -4px rgba(43, 102, 184, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .questions ul {
