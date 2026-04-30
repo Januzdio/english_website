@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reflection - Your Decision, Wider Consequences</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="logo" href="index.html">Butterfly Effect: Cheap T-Shirt</a>
+      <ul class="nav-links">
+        <li><a data-page="home" href="index.html">Home</a></li>
+        <li><a data-page="case" href="case-study.html">Case Study</a></li>
+        <li><a data-page="reflection" href="reflection.html">Reflection</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="reveal">
+      <h1>Reflection: What Happens After One Decision?</h1>
+      <p>
+        This page invites you to think, not to feel guilty. If one cheap-clothing choice is repeated by millions,
+        what kind of social and environmental outcomes does it create?
+      </p>
+    </section>
+
+    <section class="questions reveal">
+      <h2>Questions for the Reader</h2>
+      <ul>
+        <li>If a T-shirt is extremely cheap, who or what might be paying the hidden cost?</li>
+        <li>How often do I buy clothes because I need them, and how often because they are on sale?</li>
+        <li>Would I buy less if I knew more about workers' wages and factory pollution?</li>
+        <li>What changes are realistic for me: fewer items, better quality, secondhand, or repairs?</li>
+      </ul>
+    </section>
+
+    <section class="interactive card reveal">
+      <h2>Quick Impact Thought Experiment</h2>
+      <p>
+        Move the slider to estimate how many cheap T-shirts one person buys in a year.
+      </p>
+      <label for="shirtRange">T-shirts per year: <span id="shirtCount">6</span></label>
+      <input id="shirtRange" type="range" min="1" max="30" value="6" />
+      <p id="impactMessage" class="impact-message"></p>
+    </section>
+
+    <section class="reveal">
+      <h2>Final Thought</h2>
+      <p>
+        The butterfly effect reminds us that small actions matter when they become habits. Better choices do not need
+        to be perfect: buying less often, keeping clothes longer, or checking ethical labels can weaken throwaway culture.
+      </p>
+      <a class="button" href="index.html">Back to Homepage</a>
+    </section>
+
+    <section class="reveal">
+      <h2>Two Lifespan Paths, Two Outcomes</h2>
+      <figure class="feature-visual">
+        <img
+          src="assets/pathillustration.png"
+          alt="A comparison between keeping a shirt for years versus disposing of it quickly"
+          loading="lazy"
+        />
+        <figcaption>
+          Extending garment life through care and repair can significantly reduce waste compared with
+          short-use throwaway habits.
+        </figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

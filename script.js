@@ -1,0 +1,66 @@
+const pageMap = {
+  "index.html": "home",
+  "case-study.html": "case",
+  "reflection.html": "reflection"
+};
+
+const currentPath = window.location.pathname.split("/").pop() || "index.html";
+const currentPage = pageMap[currentPath];
+
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  if (link.dataset.page === currentPage) {
+    link.classList.add("active");
+  }
+});
+
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  revealElements.forEach((element) => observer.observe(element));
+} else {
+  revealElements.forEach((element) => element.classList.add("show"));
+}
+
+const shirtRange = document.getElementById("shirtRange");
+const shirtCount = document.getElementById("shirtCount");
+const impactMessage = document.getElementById("impactMessage");
+
+function updateImpactMessage(count) {
+  if (!impactMessage || !shirtCount) {
+    return;
+  }
+
+  shirtCount.textContent = String(count);
+
+  if (count <= 5) {
+    impactMessage.textContent =
+      "Lower frequency buying reduces pressure on fast production and lowers potential waste over time.";
+  } else if (count <= 15) {
+    impactMessage.textContent =
+      "Moderate buying can still create large effects when millions of people follow the same pattern.";
+  } else {
+    impactMessage.textContent =
+      "High-frequency buying strongly reinforces the throwaway model: more production pressure, more waste, and more hidden costs.";
+  }
+}
+
+if (shirtRange) {
+  const syncRangeValue = () => {
+    updateImpactMessage(Number(shirtRange.value));
+  };
+
+  syncRangeValue();
+  shirtRange.addEventListener("input", syncRangeValue);
+  shirtRange.addEventListener("change", syncRangeValue);
+}
