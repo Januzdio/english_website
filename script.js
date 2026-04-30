@@ -60,3 +60,11 @@ if (shirtRange) {
   shirtRange.addEventListener("input", () => updateImpactMessage(Number(shirtRange.value)));
   updateImpactMessage(Number(shirtRange.value));
 }
+
+window.addEventListener("scroll", () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const progress = (scrollTop / scrollHeight) * 100;
+  const bar = document.getElementById("progress-bar");
+  if (bar) bar.style.width = progress + "%";
+});

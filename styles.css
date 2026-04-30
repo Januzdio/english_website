@@ -316,3 +316,14 @@ h2 {
   color: var(--text);
   text-align: right;
 }
+
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  z-index: 100;
+  transition: width 0.1s ease;
+}
