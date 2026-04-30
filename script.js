@@ -37,30 +37,26 @@ const shirtCount = document.getElementById("shirtCount");
 const impactMessage = document.getElementById("impactMessage");
 
 function updateImpactMessage(count) {
-  if (!impactMessage || !shirtCount) {
-    return;
-  }
+  if (!impactMessage || !shirtCount) return;
 
   shirtCount.textContent = String(count);
 
+  if (document.getElementById("statWater")) {
+    document.getElementById("statWater").textContent = (count * 2700).toLocaleString() + " L";
+    document.getElementById("statWaste").textContent = (count * 0.2).toFixed(1) + " kg";
+    document.getElementById("statCo2").textContent = (count * 3.5).toFixed(1) + " kg";
+  }
+
   if (count <= 5) {
-    impactMessage.textContent =
-      "Lower frequency buying reduces pressure on fast production and lowers potential waste over time.";
+    impactMessage.textContent = "Lower frequency buying reduces pressure on fast production and lowers potential waste over time.";
   } else if (count <= 15) {
-    impactMessage.textContent =
-      "Moderate buying can still create large effects when millions of people follow the same pattern.";
+    impactMessage.textContent = "Moderate buying can still create large effects when millions of people follow the same pattern.";
   } else {
-    impactMessage.textContent =
-      "High-frequency buying strongly reinforces the throwaway model: more production pressure, more waste, and more hidden costs.";
+    impactMessage.textContent = "High-frequency buying strongly reinforces the throwaway model: more production pressure, more waste, and more hidden costs.";
   }
 }
 
 if (shirtRange) {
-  const syncRangeValue = () => {
-    updateImpactMessage(Number(shirtRange.value));
-  };
-
-  syncRangeValue();
-  shirtRange.addEventListener("input", syncRangeValue);
-  shirtRange.addEventListener("change", syncRangeValue);
+  shirtRange.addEventListener("input", () => updateImpactMessage(Number(shirtRange.value)));
+  updateImpactMessage(Number(shirtRange.value));
 }

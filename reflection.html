@@ -40,13 +40,17 @@
 
     <section class="interactive card reveal">
       <h2>Quick Impact Thought Experiment</h2>
-      <p>
-        Move the slider to estimate how many cheap T-shirts one person buys in a year.
-      </p>
+      <p>Move the slider to estimate how many cheap T-shirts one person buys in a year.</p>
       <label for="shirtRange">T-shirts per year: <span id="shirtCount">6</span></label>
       <input id="shirtRange" type="range" min="1" max="30" value="6" />
       <p id="impactMessage" class="impact-message"></p>
-    </section>
+
+      <div class="impact-chart">
+        <span><span class="chart-label-text">💧 Water</span><span id="statWater"></span></span>
+        <span><span class="chart-label-text">🗑️ Waste</span><span id="statWaste"></span></span>
+        <span><span class="chart-label-text">🌫️ CO₂</span><span id="statCo2"></span></span>
+      </div>
+  </section>
 
     <section class="reveal">
       <h2>Practical Steps Forward</h2>
